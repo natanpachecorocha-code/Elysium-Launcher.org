@@ -1,0 +1,1 @@
+import{d as c}from"detectOS.Bpua89C5.js";const t=c(),d=["linux","macos","windows"],n=d.includes(t)?t:"linux";d.forEach(e=>{const o=document.getElementById(`hero-${e}`),s=document.getElementById(`hero-${e}_dark`);e===n?(o?.classList.remove("hidden"),s?.classList.add("dark:block")):(o?.remove(),s?.remove())});

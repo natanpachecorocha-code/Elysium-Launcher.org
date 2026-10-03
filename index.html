@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" class="lg:text-lg text-prism-text-light dark:text-prism-text-dark">
+
+<!-- Mirrored from https://prismlauncher.org/ by HTTrack Website Copier/3.x [XR&CO], Fri, 02 Oct 2026 22:38:12 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="An open source Minecraft launcher with the ability to manage multiple instances, accounts and mods. Focused on user freedom and free redistributability."
+    >
+
+    <title>
+        Home - Elysium Launcher
+    </title>
+
+    <link rel="icon" type="image/png" href="img/32x32.png">
+    <link rel="sitemap" href="sitemap-index.xml">
+    <link rel="stylesheet" href="_astro/linux.fLt4N3nt.css">
+
+    <script
+        type="module"
+        src="_astro/page.B1D-nYk3.js">
+    </script>
+</head>
+
+<body
+    class="flex flex-col min-h-screen max-w-4xl min-[128rem]:max-w-6xl mx-auto gap-4 sm:pb-4 bg-center bg-cover bg-fixed bg-[rgb(239,239,239)] dark:bg-[rgb(9,10,12)] bg-[url('img/background/prism-backgroundLight.svg')] dark:bg-[url('img/background/prism-backgroundDark.svg')]"
+>
+
+    <header class="p-4 pb-0 flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
+
+        <div class="flex flex-col items-center text-center gap-4 sm:text-left sm:flex-row sm:justify-start">
+
+            <h1 class="m-0 flex items-center">
+                <a href="index.html" class="inline-block w-12">
+                    <picture>
+                        <source
+                            media="(prefers-color-scheme: dark)"
+                            srcset="img/128x128@2x.png"
+                        >
+
+                        <img
+                            src="img/L128x128@2x.png"
+                            alt="Prism Launcher"
+                            class="w-full h-auto"
+                        >
+                    </picture>
+                </a>
+            </h1>
+
+            <nav>
+                <ul class="flex items-center gap-4 font-medium">
+
+                    <li>
+                        <a class="hover:underline" href="news/index.html">
+                            News
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="hover:underline" href="about/index.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="hover:underline" href="index.html#get-involved">
+                            Community
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="flex justify-center gap-2">
+
+			<a
+				href="download/windows/index.html"
+				class="inline-flex items-center justify-center font-medium rounded-sm no-underline px-3 py-1.5 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
+				style="background-color: #ffffff; color: #000000;"
+				data-download-button="true"
+			>
+				Download
+			</a>
+
+            <script
+                type="module"
+                src="_astro/DownloadButton.astro_astro_type_script_index_0_lang.zTSYEuHC.js">
+            </script>
+
+            <a
+                href=""
+                class="inline-flex items-center justify-center font-medium rounded-sm no-underline bg-prism-rainbow-blue text-prism-text-dark px-3 py-1.5 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
+            >
+                Donate
+            </a>
+
+        </div>
+
+    </header>
+
+    <main class="flex-1 flex flex-col gap-4">
+
+        <!-- Hero -->
+        <section
+            class="max-w-none p-4 sm:p-6 flex flex-col items-center text-center gap-4 sm:text-left sm:flex-row sm:justify-start"
+        >
+
+            <div class="sm:flex-1">
+
+                <h1 class="heading-1 mb-6">
+                    Elysium Launcher
+                </h1>
+
+                <p class="font-medium text-lg mb-6">
+					A Minecraft launcher designed to let you make the game your own. Manage your accounts, 
+					versions, and instances within a clean interface designed to keep everything simple.
+                </p>
+
+                <div class="not-prose mb-4">
+				<a
+					href="download/windows/index.html"
+					class="inline-flex items-center justify-center font-medium rounded-sm no-underline px-6 py-3 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
+					style="background-color: #ffffff; color: #000000;"
+					data-download-button="true"
+				>
+					Download
+				</a>
+                </div>
+
+            </div>
+
+<!-- Elysium Launcher - Imagens com animação -->
+<div class="elysium-preview">
+
+    <img
+        src="./Assets/img/InstancesBlack.png"
+        class="elysium-slide active"
+        alt="Elysium Launcher"
+    >
+
+    <img
+        src="./Assets/img/InstancesWhite.png"
+        class="elysium-slide"
+        alt="Elysium Launcher"
+    >
+
+</div>
+
+<style>
+.elysium-preview {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.elysium-slide {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: transform 0.7s ease-in-out;
+}
+
+.elysium-slide:first-child {
+    position: relative;
+}
+
+.elysium-slide.active {
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.elysium-slide.next {
+    transform: translateX(100%);
+    z-index: 1;
+}
+
+.elysium-slide.prev {
+    transform: translateX(-100%);
+    z-index: 2;
+}
+</style>
+
+<script>
+const slides = document.querySelectorAll(".elysium-slide");
+
+let currentSlide = 0;
+
+setInterval(() => {
+
+    const current = slides[currentSlide];
+    const nextSlide = slides[(currentSlide + 1) % slides.length];
+
+    nextSlide.style.transition = "none";
+    nextSlide.style.transform = "translateX(100%)";
+    nextSlide.style.zIndex = "1";
+
+    void nextSlide.offsetWidth;
+
+    nextSlide.style.transition = "transform 0.7s ease-in-out";
+
+    current.style.transform = "translateX(-100%)";
+    current.style.zIndex = "2";
+
+    nextSlide.style.transform = "translateX(0)";
+    nextSlide.style.zIndex = "2";
+
+    currentSlide = (currentSlide + 1) % slides.length;
+
+}, 4000);
+</script>
+
+        </section>
+
+        <script
+            type="module"
+            src="_astro/HeroSection.astro_astro_type_script_index_0_lang.B_PIgWqd.js">
+        </script>
+
+        <script
+            type="module"
+            src="_astro/DownloadLink.astro_astro_type_script_index_0_lang.Z1v9IQlU.js">
+        </script>
+
+
+        <!-- Features -->
+        <section
+            class="bg-prism-background-light/0 dark:bg-prism-background-dark/90 md:rounded-lg backdrop-blur-md px-4 py-6 sm:px-6 prose dark:prose-invert prose-img:rounded-lg prose-video:rounded-lg max-w-none overflow-hidden"
+        >
+            <h2>Features</h2>
+
+<!-- Home Management -->
+<h3>Home Management</h3>
+
+<p>
+    Elysium Launcher provides a simple and organized home screen where you can
+    quickly access your Minecraft instances, manage your installations, and
+    keep everything you need in one place. From the home screen, you can easily
+    navigate between your instances and access the main features of the launcher.
+</p>
+
+            <div class="mx-auto not-prose grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+                <picture class="dark:hidden">
+                    <source
+                        srcset="_astro/pack-install_light.BmIXRhrQ_Z2uyvDi.avif"
+                        type="image/avif"
+                    >
+                    <source
+                        srcset="_astro/pack-install_light.BmIXRhrQ_ZMRA9G.webp"
+                        type="image/webp"
+                    >
+                    <img
+                        src="_astro/pack-install_light.BmIXRhrQ_Z24gEaX.png"
+                        alt="Prism Launcher screenshot showing the modpack installation user-interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="804"
+                        height="632"
+                    >
+                </picture>
+
+                <picture class="hidden dark:block">
+                    <source
+                        srcset="./Assets/img/HomeBlack.png"
+                        type="image/png"
+                    >
+                    <img
+                        src="./Assets/img/HomeBlack.png"
+                        alt="Prism Launcher screenshot showing the modpack installation user-interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="804"
+                        height="632"
+                    >
+                </picture>
+
+                <picture class="dark:hidden">
+                    <source
+                        srcset="./Assets/img/HomeBlack.png"
+                        type="image/png"
+                    >
+                    <source
+                        srcset="./Assets/img/HomeBlack.png"
+                        type="image/png"
+                    >
+                    <img
+                        src="./Assets/img/HomeBlack.png"
+                        alt="Prism Launcher screenshot showing the modpack updating user-interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="711"
+                        height="610"
+                    >
+                </picture>
+
+                <picture class="hidden dark:block">
+                    <source
+                        srcset="./Assets/img/HomeWhite.png"
+                        type="image/avif"
+                    >
+                    <source
+                        srcset="./Assets/img/HomeWhite.png"
+                        type="image/webp"
+                    >
+                    <img
+                        src="./Assets/img/HomeBlack.png"
+                        alt="Prism Launcher screenshot showing the modpack updating user-interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="711"
+                        height="610"
+                    >
+                </picture>
+
+            </div>
+
+
+<!-- Instance Management -->
+<h3>Instance Management</h3>
+
+<p>
+    Elysium Launcher keeps your Minecraft installations organized as separate
+    instances. Each instance can have its own version, mods, resource packs,
+    shaders, settings, and other configurations, allowing you to manage and
+    switch between different Minecraft setups with ease.
+</p>
+
+            <div class="mx-auto not-prose grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+                <picture class="dark:hidden">
+                    <source
+                        srcset="./Assets/img/InstancesBlack.png"
+                        type="image/avif"
+                    >
+                    <source
+                        srcset="./Assets/img/InstancesBlack.png"
+                        type="image/webp"
+                    >
+                    <img
+                        src="./Assets/img/InstancesBlack.png"
+                        alt="Prism Launcher screenshot showing the mod installation user-interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="626"
+                        height="429"
+                    >
+                </picture>
+
+                <picture class="hidden dark:block">
+                    <source
+                        srcset="./Assets/img/InstancesBlack.png"
+                        type="image/avif"
+                    >
+                    <source
+                        srcset="./Assets/img/InstancesBlack.png"
+                        type="image/webp"
+                    >
+                    <img
+                        src="./Assets/img/InstancesBlack.png"
+                        alt="Prism Launcher screenshot showing the mod installation user-interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="626"
+                        height="429"
+                    >
+                </picture>
+
+                <picture class="dark:hidden">
+                    <source
+                        srcset="./Assets/img/InstancesWhite.png"
+                        type="image/avif"
+                    >
+                    <source
+                        srcset="_astro/mod-update_light.Clfo4Pji_Z2hAnet.webp"
+                        type="image/webp"
+                    >
+                    <img
+                        src="./Assets/img/InstancesWhite.png"
+                        alt="Prism Launcher screenshot showing the mod updating user-interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="802"
+                        height="629"
+                    >
+                </picture>
+
+                <picture class="hidden dark:block">
+                    <source
+                        srcset="./Assets/img/InstancesWhite.png"
+                        type="image/avif"
+                    >
+                    <source
+                        srcset="./Assets/img/InstancesWhite.png"
+                        type="image/webp"
+                    >
+                    <img
+                        src="./Assets/img/InstancesWhite.png"
+                        alt="Prism Launcher screenshot showing the mod updating user-interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="802"
+                        height="629"
+                    >
+                </picture>
+
+            </div>
+
+
+<!-- Instance Configuration -->
+<h3>Instance Configuration</h3>
+
+<p>
+    Elysium Launcher gives you full control over each Minecraft instance,
+    allowing you to customize its version, mods, resource packs, shaders,
+    settings, and other configurations. Each instance can be configured
+    independently, giving you the freedom to create the exact setup you want.
+</p>
+
+            <picture class="dark:hidden">
+                <source
+                    srcset="./Assets/img/ManageInstanceBlack.png"
+                    type="image/avif"
+                >
+                <source
+                    srcset="./Assets/img/ManageInstanceBlack.png"
+                    type="image/webp"
+                >
+                <img
+                    src="./Assets/img/ManageInstanceBlack.png"
+                    alt="Prism Launcher screenshot showing the instance management user-interface"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="auto"
+                    width="711"
+                    height="610"
+                    class="mx-auto not-prose"
+                >
+            </picture>
+
+            <picture class="hidden dark:block">
+                <source
+                    srcset="./Assets/img/ManageInstanceBlack.png"
+                    type="image/avif"
+                >
+                <source
+                    srcset="./Assets/img/ManageInstanceBlack.png"
+                    type="image/webp"
+                >
+                <img
+                    src="./Assets/img/ManageInstanceBlack.png"
+                    alt="Prism Launcher screenshot showing the instance management user-interface"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="auto"
+                    width="711"
+                    height="610"
+                    class="mx-auto not-prose"
+                >
+            </picture>
+
+
+<!-- Instance Customization -->
+<h3>Instance Customization</h3>
+
+<p>
+    Elysium Launcher gives you complete control over how each Minecraft instance
+    looks and works. Customize your instances with different settings, mods,
+    resource packs, shaders, and other options to create the setup that fits
+    exactly how you want to play.
+</p>
+
+            <picture>
+                <source
+                    srcset="./Assets/img/CustomizeInstanceBlack.png"
+                    type="image/avif"
+                >
+                <source
+                    srcset="./Assets/img/CustomizeInstanceBlack.png"
+                    type="image/webp"
+                >
+                <img
+                    src="./Assets/img/CustomizeInstanceBlack.png"
+                    alt="Prism Launcher screenshot showing a themed user-interface"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="auto"
+                    width="711"
+                    height="610"
+                    class="mx-auto not-prose"
+                >
+            </picture>
+
+
+            <h2>I want that!</h2>
+
+            <p>
+                You can install Prism Launcher on Windows, MacOS, and Linux. See the
+                <a data-download-link href="download/windows/index.html">
+                    Download page
+                </a>
+                for more information. You can also find community packages there.
+            </p>
+
+        </section>
+
+
+        <!-- Get Involved -->
+        <section
+            class="bg-prism-background-light/90 dark:bg-prism-background-dark/90 md:rounded-lg backdrop-blur-md px-4 py-6 sm:px-6 prose dark:prose-invert prose-img:rounded-lg prose-video:rounded-lg max-w-none overflow-hidden"
+        >
+
+            <h2 id="get-involved">
+                Get Involved
+            </h2>
+
+            <div class="flex flex-wrap justify-center items-center gap-4 mb-4">
+                <!-- Discord -->
+                <a
+                    href="https://discord.gg/utrD4AFt68"
+                    aria-label="Discord"
+                    class="text-prism-text-light dark:text-prism-text-dark"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <article
+                        class="bg-prism-background-light dark:bg-prism-background-dark rounded-lg border border-black/10 dark:border-white/10 px-4 py-6 sm:px-6 size-18 flex justify-center items-center"
+                    >
+                        <svg
+                            width="36"
+                            height="36"
+                            viewBox="0 0 24 24"
+                            data-icon="simple-icons:discord"
+                        >
+                            <symbol id="ai:simple-icons:discord">
+                                <path
+                                    fill="currentColor"
+                                    d="M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.3 18.3 0 0 0-5.487 0a13 13 0 0 0-.617-1.25a.08.08 0 0 0-.079-.037A19.7 19.7 0 0 0 3.677 4.37a.1.1 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.08.08 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.08.08 0 0 0 .084-.028a14 14 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13 13 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10 10 0 0 0 .372-.292a.07.07 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .078.01q.181.149.373.292a.077.077 0 0 1-.006.127a12.3 12.3 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.08.08 0 0 0 .084.028a19.8 19.8 0 0 0 6.002-3.03a.08.08 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03M8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418m7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418"
+                                />
+                            </symbol>
+                            <use href="#ai:simple-icons:discord"></use>
+                        </svg>
+                    </article>
+                </a>
+                
+                <!-- Email -->
+                <a
+                    href="mailto:contact@prismlauncher.org"
+                    aria-label="Email"
+                    class="text-prism-text-light dark:text-prism-text-dark"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <article
+                        class="bg-prism-background-light dark:bg-prism-background-dark rounded-lg border border-black/10 dark:border-white/10 px-4 py-6 sm:px-6 size-18 flex justify-center items-center"
+                    >
+                        <svg
+                            width="36"
+                            height="36"
+                            viewBox="0 0 24 24"
+                            data-icon="lucide:mail"
+                        >
+                            <symbol id="ai:lucide:mail">
+                                <g
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                >
+                                    <path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                </g>
+                            </symbol>
+
+                            <use href="#ai:lucide:mail"></use>
+                        </svg>
+                    </article>
+                </a>
+
+            </div>
+
+
+            <p>
+                Elysium Launcher is an Free Launcher and we welcome contributions from
+                the community.
+            </p>
+
+            <p>
+                We also thank many wonderful companies who help us keep the lights on.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 not-prose">
+
+                <article
+                    class="bg-prism-background-light dark:bg-prism-background-dark rounded-lg border border-black/10 dark:border-white/10 px-4 py-6 sm:px-6 flex justify-center items-center gap-4 bg-prism-background-light! border-black/10!"
+                >
+                    <img
+                        class="rounded-md w-full"
+                        src="./Assets/img/Visual Studio Code.png"
+                        alt="Visual Studio Code"
+                    >
+                </article>
+
+                <article
+                    class="bg-prism-background-light dark:bg-prism-background-dark rounded-lg border border-black/10 dark:border-white/10 px-4 py-6 sm:px-6 flex justify-center items-center gap-4 bg-prism-background-light! border-black/10!"
+                >
+                    <img
+                        class="rounded-md w-full"
+                        src="https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg"
+                        alt="jetbrains"
+                    >
+                </article>
+
+            </div>
+
+
+            <h2>Other Information</h2>
+
+            <p>
+                Elysium Launcher's logo and related assets are licensed under CC BY-SA 4.0.
+            </p>
+
+            <p>
+                This website is powered by
+                <a href="https://code.visualstudio.com/">
+                    Visual Studio Code
+                </a>.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="max-w-none text-center font-medium p-4">
+
+        <!-- Logo -->
+        <h1 class="m-0 mb-4">
+            <a href="index.html" class="inline-block w-30">
+
+                <picture>
+
+                    <source
+                        media="(prefers-color-scheme: dark)"
+                        srcset="./img/64x64.png"
+                    >
+
+                    <img
+                        src="./img/64x64.png"
+                        alt="Elysium Launcher"
+                        class="w-full h-auto"
+                    >
+
+                </picture>
+
+            </a>
+        </h1>
+
+
+        <!-- Social links -->
+        <div class="flex justify-center items-center gap-4 mb-4">
+
+            <a
+                href="https://discord.gg/utrD4AFt68"
+                aria-label="Discord"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    data-icon="simple-icons:discord"
+                >
+                    <use href="#ai:simple-icons:discord"></use>
+                </svg>
+            </a>
+
+            <a
+                href="mailto:contact@prismlauncher.org"
+                aria-label="Email"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    data-icon="lucide:mail"
+                >
+                    <use href="#ai:lucide:mail"></use>
+                </svg>
+            </a>
+
+        </div>
+
+
+        <!-- Footer text -->
+        <p class="text-sm mb-2">
+            Not affiliated with Mojang or Microsoft
+        </p>
+
+        <p class="text-xs">
+            © 2026 Prism Launcher Contributors
+        </p>
+
+    </footer>
+
+
+    <script
+        type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+        integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
+        data-cf-beacon='{"version":"2024.11.0","token":"b7e0d2378fa94606803afc1aecb3a44f","r":1,"spa":2}'
+        crossorigin="anonymous"
+    ></script>
+
+</body>
+
+<!-- Mirrored from https://prismlauncher.org/ by HTTrack Website Copier/3.x [XR&CO], Fri, 02 Oct 2026 22:38:28 GMT -->
+
+</html>

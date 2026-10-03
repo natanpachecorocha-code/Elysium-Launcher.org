@@ -1,0 +1,1 @@
+const s=()=>{const{userAgent:o,platform:t}=navigator,n=o.toLowerCase(),e=t.toLowerCase();return n.includes("windows")||e.includes("win")?"windows":n.includes("mac")||e.includes("mac")?"macos":"linux"},r=()=>`/download/${s()}`;export{r as a,s as d};
