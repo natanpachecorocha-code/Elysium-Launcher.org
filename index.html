@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="lg:text-lg text-prism-text-light dark:text-prism-text-dark">
-
-<!-- Mirrored from https://prismlauncher.org/ by HTTrack Website Copier/3.x [XR&CO], Fri, 02 Oct 2026 22:38:12 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta
         name="description"
-        content="An open source Minecraft launcher with the ability to manage multiple instances, accounts and mods. Focused on user freedom and free redistributability."
+        content="A Minecraft launcher designed to let you manage multiple instances, accounts, versions, and mods with a clean and simple interface."
     >
 
     <title>
@@ -36,18 +33,11 @@
 
             <h1 class="m-0 flex items-center">
                 <a href="index.html" class="inline-block w-12">
-                    <picture>
-                        <source
-                            media="(prefers-color-scheme: dark)"
-                            srcset="img/128x128@2x.png"
-                        >
-
-                        <img
-                            src="img/L128x128@2x.png"
-                            alt="Prism Launcher"
+                    <img
+                            src="img/128x128@2x.png"
+                            alt="Elysium Launcher"
                             class="w-full h-auto"
                         >
-                    </picture>
                 </a>
             </h1>
 
@@ -87,13 +77,7 @@
 			>
 				Download
 			</a>
-
-            <script
-                type="module"
-                src="_astro/DownloadButton.astro_astro_type_script_index_0_lang.zTSYEuHC.js">
-            </script>
-
-            <a
+<a
                 href=""
                 class="inline-flex items-center justify-center font-medium rounded-sm no-underline bg-prism-rainbow-blue text-prism-text-dark px-3 py-1.5 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
             >
@@ -118,7 +102,7 @@
                 </h1>
 
                 <p class="font-medium text-lg mb-6">
-					A Minecraft launcher designed to let you make the game your own. Manage your accounts, 
+					A Minecraft launcher designed to let you make the game your own. Manage your accounts,
 					versions, and instances within a clean interface designed to keep everything simple.
                 </p>
 
@@ -151,93 +135,71 @@
     >
 
 </div>
+        <style>
+            .elysium-preview {
+                position: relative;
+                width: 100%;
+                max-width: 520px;
+                overflow: hidden;
+                border-radius: 20px;
+                margin: 0 auto;
+                aspect-ratio: 1.46;
+            }
 
-<style>
-.elysium-preview {
-    position: relative;
-    width: 100%;
-    max-width: 520px;
-    overflow: hidden;
-    border-radius: 20px;
-    margin: 0 auto;
-}
+            .elysium-slide {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 20px;
+                transform: translateX(100%);
+                transition: transform 0.7s ease-in-out;
+            }
 
-.elysium-slide {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
+            .elysium-slide.active {
+                transform: translateX(0);
+                z-index: 2;
+            }
 
-    position: absolute;
-    top: 0;
-    left: 0;
+            .elysium-slide.prev {
+                transform: translateX(-100%);
+                z-index: 1;
+            }
 
-    transition: transform 0.7s ease-in-out;
-}
+            @media (prefers-reduced-motion: reduce) {
+                .elysium-slide {
+                    transition: none;
+                }
+            }
+        </style>
+        <script>
+            (() => {
+                const slides = document.querySelectorAll(".elysium-slide");
 
-.elysium-slide:first-child {
-    position: relative;
-}
+                if (slides.length < 2) return;
 
-.elysium-slide.active {
-    transform: translateX(0);
-    z-index: 2;
-}
+                let currentSlide = 0;
 
-.elysium-slide.next {
-    transform: translateX(100%);
-    z-index: 1;
-}
+                setInterval(() => {
+                    const current = slides[currentSlide];
+                    const nextIndex = (currentSlide + 1) % slides.length;
+                    const next = slides[nextIndex];
 
-.elysium-slide.prev {
-    transform: translateX(-100%);
-    z-index: 2;
-}
-</style>
+                    next.classList.remove("prev");
+                    next.classList.add("active");
 
-<script>
-const slides = document.querySelectorAll(".elysium-slide");
+                    current.classList.remove("active");
+                    current.classList.add("prev");
 
-let currentSlide = 0;
-
-setInterval(() => {
-
-    const current = slides[currentSlide];
-    const nextSlide = slides[(currentSlide + 1) % slides.length];
-
-    nextSlide.style.transition = "none";
-    nextSlide.style.transform = "translateX(100%)";
-    nextSlide.style.zIndex = "1";
-
-    void nextSlide.offsetWidth;
-
-    nextSlide.style.transition = "transform 0.7s ease-in-out";
-
-    current.style.transform = "translateX(-100%)";
-    current.style.zIndex = "2";
-
-    nextSlide.style.transform = "translateX(0)";
-    nextSlide.style.zIndex = "2";
-
-    currentSlide = (currentSlide + 1) % slides.length;
-
-}, 4000);
-</script>
+                    currentSlide = nextIndex;
+                }, 4000);
+            })();
+        </script>
 
         </section>
 
-        <script
-            type="module"
-            src="_astro/HeroSection.astro_astro_type_script_index_0_lang.B_PIgWqd.js">
-        </script>
-
-        <script
-            type="module"
-            src="_astro/DownloadLink.astro_astro_type_script_index_0_lang.Z1v9IQlU.js">
-        </script>
-
-
-        <!-- Features -->
+<!-- Features -->
         <section
             class="bg-prism-background-light/0 dark:bg-prism-background-dark/90 md:rounded-lg backdrop-blur-md px-4 py-6 sm:px-6 prose dark:prose-invert prose-img:rounded-lg prose-video:rounded-lg max-w-none overflow-hidden"
         >
@@ -266,7 +228,7 @@ setInterval(() => {
                     >
                     <img
                         src="_astro/pack-install_light.BmIXRhrQ_Z24gEaX.png"
-                        alt="Prism Launcher screenshot showing the modpack installation user-interface"
+                        alt="Elysium Launcher screenshot showing the home interface"
                         loading="lazy"
                         decoding="async"
                         fetchpriority="auto"
@@ -275,64 +237,37 @@ setInterval(() => {
                     >
                 </picture>
 
-                <picture class="hidden dark:block">
-                    <source
-                        srcset="./Assets/img/HomeBlack.png"
-                        type="image/png"
-                    >
-                    <img
+                <img
                         src="./Assets/img/HomeBlack.png"
-                        alt="Prism Launcher screenshot showing the modpack installation user-interface"
+                        alt="Elysium Launcher screenshot showing the home interface"
                         loading="lazy"
                         decoding="async"
                         fetchpriority="auto"
                         width="804"
                         height="632"
-                    >
-                </picture>
+                     class="hidden dark:block">
 
-                <picture class="dark:hidden">
-                    <source
-                        srcset="./Assets/img/HomeBlack.png"
-                        type="image/png"
-                    >
-                    <source
-                        srcset="./Assets/img/HomeBlack.png"
-                        type="image/png"
-                    >
-                    <img
+                <img
                         src="./Assets/img/HomeBlack.png"
-                        alt="Prism Launcher screenshot showing the modpack updating user-interface"
+                        alt="Elysium Launcher screenshot showing the home interface"
                         loading="lazy"
                         decoding="async"
                         fetchpriority="auto"
                         width="711"
                         height="610"
-                    >
-                </picture>
+                     class="dark:hidden">
 
-                <picture class="hidden dark:block">
-                    <source
-                        srcset="./Assets/img/HomeWhite.png"
-                        type="image/avif"
-                    >
-                    <source
-                        srcset="./Assets/img/HomeWhite.png"
-                        type="image/webp"
-                    >
-                    <img
+                <img
                         src="./Assets/img/HomeBlack.png"
-                        alt="Prism Launcher screenshot showing the modpack updating user-interface"
+                        alt="Elysium Launcher screenshot showing the home interface"
                         loading="lazy"
                         decoding="async"
                         fetchpriority="auto"
                         width="711"
                         height="610"
-                    >
-                </picture>
+                     class="hidden dark:block">
 
             </div>
-
 
 <!-- Instance Management -->
 <h3>Instance Management</h3>
@@ -346,45 +281,25 @@ setInterval(() => {
 
             <div class="mx-auto not-prose grid grid-cols-1 gap-4 sm:grid-cols-2">
 
-                <picture class="dark:hidden">
-                    <source
-                        srcset="./Assets/img/InstancesBlack.png"
-                        type="image/avif"
-                    >
-                    <source
-                        srcset="./Assets/img/InstancesBlack.png"
-                        type="image/webp"
-                    >
-                    <img
+                <img
                         src="./Assets/img/InstancesBlack.png"
-                        alt="Prism Launcher screenshot showing the mod installation user-interface"
+                        alt="Elysium Launcher screenshot showing the instance interface"
                         loading="lazy"
                         decoding="async"
                         fetchpriority="auto"
                         width="626"
                         height="429"
-                    >
-                </picture>
+                     class="dark:hidden">
 
-                <picture class="hidden dark:block">
-                    <source
-                        srcset="./Assets/img/InstancesBlack.png"
-                        type="image/avif"
-                    >
-                    <source
-                        srcset="./Assets/img/InstancesBlack.png"
-                        type="image/webp"
-                    >
-                    <img
+                <img
                         src="./Assets/img/InstancesBlack.png"
-                        alt="Prism Launcher screenshot showing the mod installation user-interface"
+                        alt="Elysium Launcher screenshot showing the instance interface"
                         loading="lazy"
                         decoding="async"
                         fetchpriority="auto"
                         width="626"
                         height="429"
-                    >
-                </picture>
+                     class="hidden dark:block">
 
                 <picture class="dark:hidden">
                     <source
@@ -397,7 +312,7 @@ setInterval(() => {
                     >
                     <img
                         src="./Assets/img/InstancesWhite.png"
-                        alt="Prism Launcher screenshot showing the mod updating user-interface"
+                        alt="Elysium Launcher screenshot showing the instance interface"
                         loading="lazy"
                         decoding="async"
                         fetchpriority="auto"
@@ -406,28 +321,17 @@ setInterval(() => {
                     >
                 </picture>
 
-                <picture class="hidden dark:block">
-                    <source
-                        srcset="./Assets/img/InstancesWhite.png"
-                        type="image/avif"
-                    >
-                    <source
-                        srcset="./Assets/img/InstancesWhite.png"
-                        type="image/webp"
-                    >
-                    <img
+                <img
                         src="./Assets/img/InstancesWhite.png"
-                        alt="Prism Launcher screenshot showing the mod updating user-interface"
+                        alt="Elysium Launcher screenshot showing the instance interface"
                         loading="lazy"
                         decoding="async"
                         fetchpriority="auto"
                         width="802"
                         height="629"
-                    >
-                </picture>
+                     class="hidden dark:block">
 
             </div>
-
 
 <!-- Instance Configuration -->
 <h3>Instance Configuration</h3>
@@ -439,18 +343,9 @@ setInterval(() => {
     independently, giving you the freedom to create the exact setup you want.
 </p>
 
-            <picture class="dark:hidden">
-                <source
-                    srcset="./Assets/img/ManageInstanceBlack.png"
-                    type="image/avif"
-                >
-                <source
-                    srcset="./Assets/img/ManageInstanceBlack.png"
-                    type="image/webp"
-                >
-                <img
+            <img
                     src="./Assets/img/ManageInstanceBlack.png"
-                    alt="Prism Launcher screenshot showing the instance management user-interface"
+                    alt="Elysium Launcher screenshot showing the instance management interface"
                     loading="lazy"
                     decoding="async"
                     fetchpriority="auto"
@@ -458,20 +353,10 @@ setInterval(() => {
                     height="610"
                     class="mx-auto not-prose"
                 >
-            </picture>
 
-            <picture class="hidden dark:block">
-                <source
-                    srcset="./Assets/img/ManageInstanceBlack.png"
-                    type="image/avif"
-                >
-                <source
-                    srcset="./Assets/img/ManageInstanceBlack.png"
-                    type="image/webp"
-                >
-                <img
+            <img
                     src="./Assets/img/ManageInstanceBlack.png"
-                    alt="Prism Launcher screenshot showing the instance management user-interface"
+                    alt="Elysium Launcher screenshot showing the instance management interface"
                     loading="lazy"
                     decoding="async"
                     fetchpriority="auto"
@@ -479,8 +364,6 @@ setInterval(() => {
                     height="610"
                     class="mx-auto not-prose"
                 >
-            </picture>
-
 
 <!-- Instance Customization -->
 <h3>Instance Customization</h3>
@@ -492,18 +375,9 @@ setInterval(() => {
     exactly how you want to play.
 </p>
 
-            <picture>
-                <source
-                    srcset="./Assets/img/CustomizeInstanceBlack.png"
-                    type="image/avif"
-                >
-                <source
-                    srcset="./Assets/img/CustomizeInstanceBlack.png"
-                    type="image/webp"
-                >
-                <img
+            <img
                     src="./Assets/img/CustomizeInstanceBlack.png"
-                    alt="Prism Launcher screenshot showing a themed user-interface"
+                    alt="Elysium Launcher screenshot showing instance customization"
                     loading="lazy"
                     decoding="async"
                     fetchpriority="auto"
@@ -511,21 +385,15 @@ setInterval(() => {
                     height="610"
                     class="mx-auto not-prose"
                 >
-            </picture>
 
-
-            <h2>I want that!</h2>
-
+            <h2>Get Elysium Launcher</h2>
             <p>
-                You can install Prism Launcher on Windows, MacOS, and Linux. See the
-                <a data-download-link href="download/windows/index.html">
-                    Download page
-                </a>
-                for more information. You can also find community packages there.
+                Elysium Launcher is currently available for Windows.
+                Visit the <a data-download-link href="download/windows/index.html">Download page</a>
+                to get the latest version.
             </p>
 
         </section>
-
 
         <!-- Get Involved -->
         <section
@@ -564,10 +432,10 @@ setInterval(() => {
                         </svg>
                     </article>
                 </a>
-                
+
                 <!-- Email -->
                 <a
-                    href="mailto:contact@prismlauncher.org"
+                    href="mailto:contact@elysiumlauncher.org"
                     aria-label="Email"
                     class="text-prism-text-light dark:text-prism-text-dark"
                     target="_blank"
@@ -602,9 +470,8 @@ setInterval(() => {
 
             </div>
 
-
             <p>
-                Elysium Launcher is an Free Launcher and we welcome contributions from
+                Elysium Launcher is a free launcher and we welcome contributions from
                 the community.
             </p>
 
@@ -636,7 +503,6 @@ setInterval(() => {
 
             </div>
 
-
             <h2>Other Information</h2>
 
             <p>
@@ -654,7 +520,6 @@ setInterval(() => {
 
     </main>
 
-
     <!-- Footer -->
     <footer class="max-w-none text-center font-medium p-4">
 
@@ -662,24 +527,14 @@ setInterval(() => {
         <h1 class="m-0 mb-4">
             <a href="index.html" class="inline-block w-30">
 
-                <picture>
-
-                    <source
-                        media="(prefers-color-scheme: dark)"
-                        srcset="./img/64x64.png"
-                    >
-
-                    <img
+                <img
                         src="./img/64x64.png"
                         alt="Elysium Launcher"
                         class="w-full h-auto"
                     >
 
-                </picture>
-
             </a>
         </h1>
-
 
         <!-- Social links -->
         <div class="flex justify-center items-center gap-4 mb-4">
@@ -701,7 +556,7 @@ setInterval(() => {
             </a>
 
             <a
-                href="mailto:contact@prismlauncher.org"
+                href="mailto:contact@elysiumlauncher.org"
                 aria-label="Email"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -718,29 +573,15 @@ setInterval(() => {
 
         </div>
 
-
         <!-- Footer text -->
         <p class="text-sm mb-2">
             Not affiliated with Mojang or Microsoft
         </p>
 
         <p class="text-xs">
-            © 2026 Prism Launcher Contributors
+            © 2026 Elysium Launcher Contributors
         </p>
 
     </footer>
-
-
-    <script
-        type="module"
-        src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
-        integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
-        data-cf-beacon='{"version":"2024.11.0","token":"b7e0d2378fa94606803afc1aecb3a44f","r":1,"spa":2}'
-        crossorigin="anonymous"
-    ></script>
-
 </body>
-
-<!-- Mirrored from https://prismlauncher.org/ by HTTrack Website Copier/3.x [XR&CO], Fri, 02 Oct 2026 22:38:28 GMT -->
-
 </html>

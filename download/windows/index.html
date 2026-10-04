@@ -17,19 +17,19 @@
             .elysium-preview {
                 position: relative;
                 width: 100%;
+                margin: 0 auto;
                 overflow: hidden;
                 border-radius: 20px;
-                margin: 0 auto;
             }
 
             .elysium-slide {
+                position: absolute;
+                top: 0;
+                left: 0;
                 display: block;
                 width: 100%;
                 height: auto;
                 border-radius: 20px;
-                position: absolute;
-                top: 0;
-                left: 0;
                 transform: translateX(100%);
                 transition: transform 0.7s ease-in-out;
             }
@@ -39,18 +39,29 @@
             }
 
             .elysium-slide.active {
-                transform: translateX(0);
                 z-index: 2;
+                transform: translateX(0);
             }
 
             .elysium-slide.next {
-                transform: translateX(100%);
                 z-index: 1;
+                transform: translateX(100%);
             }
 
             .elysium-slide.prev {
-                transform: translateX(-100%);
                 z-index: 2;
+                transform: translateX(-100%);
+            }
+
+            .elysium-download-button {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            .elysium-unavailable-button {
+                background-color: #4c1d95 !important;
+                color: #c4b5fd !important;
+                opacity: 1 !important;
             }
         </style>
     </head>
@@ -64,14 +75,11 @@
                 <!-- Logo -->
                 <h1 class="m-0 flex items-center">
                     <a href="../../index.html" class="inline-block w-12">
-                        <picture>
-                            <source media="(prefers-color-scheme: dark)" srcset="../../img/128x128@2x.png">
-                            <img
+                        <img
                                 src="../../img/128x128@2x.png"
                                 alt="Elysium Launcher"
                                 class="w-full h-auto"
                             >
-                        </picture>
                     </a>
                 </h1>
 
@@ -104,8 +112,7 @@
 
                 <a
                     href="index.html"
-                    class="inline-flex items-center justify-center font-medium rounded-sm no-underline px-3 py-1.5 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
-                    style="background-color: #ffffff; color: #000000;"
+                    class="elysium-download-button inline-flex items-center justify-center font-medium rounded-sm no-underline px-3 py-1.5 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
                     data-download-button="true"
                 >
                     Download
@@ -179,9 +186,8 @@
 
                                 <!-- Installer -->
                                 <a
-                                    href="https://pub-a33947db138847d8ac345c74c2bdd30a.r2.dev/Elysium%20Launcher_1.3.0-1_x64-setup.exe"
-                                    class="inline-flex items-center justify-center font-medium rounded-sm no-underline px-4 py-2 text-base gap-2 hover:brightness-110 focus:brightness-110 active:brightness-90 w-full"
-                                    style="background: #ffffff !important; background-color: #ffffff !important; color: #000000 !important; opacity: 1 !important;"
+                                    href="https://pub-a33947db138847d8ac345c74c2bdd30a.r2.dev/Elysium%20Launcher_1.3.0-2_x64-setup.exe"
+                                    class="elysium-download-button inline-flex items-center justify-center font-medium rounded-sm no-underline px-4 py-2 text-base gap-2 hover:brightness-110 focus:brightness-110 active:brightness-90 w-full"
                                     download
                                 >
                                     <svg
@@ -270,13 +276,11 @@
 
                             <div class="space-y-3">
 
-
 <button
     type="button"
     disabled
     aria-disabled="true"
-    class="inline-flex items-center justify-center font-medium rounded-sm no-underline px-4 py-2 text-base gap-2 w-full cursor-not-allowed"
-    style="background-color: #4c1d95 !important; color: #c4b5fd !important; opacity: 1 !important;"
+    class="elysium-unavailable-button inline-flex items-center justify-center font-medium rounded-sm no-underline px-4 py-2 text-base gap-2 w-full cursor-not-allowed"
 >
     <svg
         width="16"
@@ -431,25 +435,9 @@
 
             <!-- Logo -->
             <h1 class="m-0 mb-4">
-
                 <a href="../../index.html" class="inline-block w-30">
-
-                    <picture>
-                        <source
-                            media="(prefers-color-scheme: dark)"
-                            srcset="../../img/64x64.png"
-                        >
-
-                        <img
-                            src="../../img/64x64.png"
-                            alt="Elysium Launcher"
-                            class="w-full h-auto"
-                        >
-
-                    </picture>
-
+                    <img src="../../img/64x64.png" alt="Elysium Launcher" class="w-full h-auto">
                 </a>
-
             </h1>
 
             <!-- Social Links -->
@@ -527,51 +515,34 @@
         <!-- Slider Script -->
         <script>
             const slides = document.querySelectorAll(".elysium-slide");
-
             let currentSlide = 0;
 
-            slides.forEach((slide, index) => {
-                slide.classList.remove("active", "next", "prev");
+            if (slides.length > 1) {
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle("active", index === 0);
+                    slide.classList.toggle("next", index !== 0);
+                    slide.classList.remove("prev");
+                });
 
-                if (index === 0) {
-                    slide.classList.add("active");
-                    slide.style.transform = "translateX(0)";
-                    slide.style.zIndex = "2";
-                } else {
-                    slide.classList.add("next");
-                    slide.style.transform = "translateX(100%)";
-                    slide.style.zIndex = "1";
-                }
-            });
+                setInterval(() => {
+                    const current = slides[currentSlide];
+                    const nextIndex = (currentSlide + 1) % slides.length;
+                    const next = slides[nextIndex];
 
-            setInterval(() => {
-                const current = slides[currentSlide];
-                const nextIndex = (currentSlide + 1) % slides.length;
-                const next = slides[nextIndex];
+                    next.classList.remove("prev");
+                    next.classList.add("next");
 
-                next.style.transition = "none";
-                next.style.transform = "translateX(100%)";
-                next.style.zIndex = "1";
+                    requestAnimationFrame(() => {
+                        current.classList.remove("active");
+                        current.classList.add("prev");
 
-                void next.offsetWidth;
+                        next.classList.remove("next");
+                        next.classList.add("active");
+                    });
 
-                next.style.transition = "transform 0.7s ease-in-out";
-                current.style.transition = "transform 0.7s ease-in-out";
-
-                current.style.transform = "translateX(-100%)";
-                current.style.zIndex = "2";
-
-                next.style.transform = "translateX(0)";
-                next.style.zIndex = "3";
-
-                current.classList.remove("active");
-                current.classList.add("prev");
-
-                next.classList.remove("next");
-                next.classList.add("active");
-
-                currentSlide = nextIndex;
-            }, 4000);
+                    currentSlide = nextIndex;
+                }, 4000);
+            }
         </script>
 
     </body>
