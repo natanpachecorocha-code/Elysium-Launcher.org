@@ -9,13 +9,18 @@
         content="A Minecraft launcher designed to let you manage multiple instances, accounts, versions, and mods with a clean and simple interface."
     >
 
-    <title>Home - Elysium Launcher</title>
+    <title>
+        Home - Elysium Launcher
+    </title>
 
     <link rel="icon" type="image/png" href="img/32x32.png">
     <link rel="sitemap" href="sitemap-index.xml">
     <link rel="stylesheet" href="_astro/linux.fLt4N3nt.css">
 
-    <script type="module" src="_astro/page.B1D-nYk3.js"></script>
+    <script
+        type="module"
+        src="_astro/page.B1D-nYk3.js">
+    </script>
 </head>
 
 <body
@@ -29,15 +34,16 @@
             <h1 class="m-0 flex items-center">
                 <a href="index.html" class="inline-block w-12">
                     <img
-                        src="img/128x128@2x.png"
-                        alt="Elysium Launcher"
-                        class="w-full h-auto"
-                    >
+                            src="img/128x128@2x.png"
+                            alt="Elysium Launcher"
+                            class="w-full h-auto"
+                        >
                 </a>
             </h1>
 
             <nav>
                 <ul class="flex items-center gap-4 font-medium">
+
                     <li>
                         <a class="hover:underline" href="news/index.html">
                             News
@@ -55,6 +61,7 @@
                             Community
                         </a>
                     </li>
+
                 </ul>
             </nav>
 
@@ -62,16 +69,15 @@
 
         <div class="flex justify-center gap-2">
 
-            <a
-                href="download/windows/index.html"
-                class="inline-flex items-center justify-center font-medium rounded-sm no-underline px-3 py-1.5 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
-                style="background-color: #ffffff; color: #000000;"
-                data-download-button="true"
-            >
-                Download
-            </a>
-
-            <a
+			<a
+				href="download/windows/index.html"
+				class="inline-flex items-center justify-center font-medium rounded-sm no-underline px-3 py-1.5 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
+				style="background-color: #ffffff; color: #000000;"
+				data-download-button="true"
+			>
+				Download
+			</a>
+<a
                 href=""
                 class="inline-flex items-center justify-center font-medium rounded-sm no-underline bg-prism-rainbow-blue text-prism-text-dark px-3 py-1.5 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
             >
@@ -96,233 +102,282 @@
                 </h1>
 
                 <p class="font-medium text-lg mb-6">
-                    A Minecraft launcher designed to let you make the game your own. Manage your accounts,
-                    versions, and instances within a clean interface designed to keep everything simple.
+					A Minecraft launcher designed to let you make the game your own. Manage your accounts,
+					versions, and instances within a clean interface designed to keep everything simple.
                 </p>
 
                 <div class="not-prose mb-4">
-                    <a
-                        href="download/windows/index.html"
-                        class="inline-flex items-center justify-center font-medium rounded-sm no-underline px-6 py-3 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
-                        style="background-color: #ffffff; color: #000000;"
-                        data-download-button="true"
-                    >
-                        Download
-                    </a>
+				<a
+					href="download/windows/index.html"
+					class="inline-flex items-center justify-center font-medium rounded-sm no-underline px-6 py-3 text-sm hover:brightness-110 focus:brightness-110 active:brightness-90"
+					style="background-color: #ffffff; color: #000000;"
+					data-download-button="true"
+				>
+					Download
+				</a>
                 </div>
 
             </div>
 
-            <!-- Elysium Launcher Preview -->
-            <div class="elysium-preview">
+<!-- Elysium Launcher - Imagens com animação -->
+<div class="elysium-preview">
 
-                <img
-                    src="./Assets/img/InstancesBlack.png"
-                    class="elysium-slide active"
-                    alt="Elysium Launcher"
-                >
+    <img
+        src="./Assets/img/InstancesBlack.png"
+        class="elysium-slide active"
+        alt="Elysium Launcher"
+    >
 
-                <img
-                    src="./Assets/img/InstancesWhite.png"
-                    class="elysium-slide"
-                    alt="Elysium Launcher"
-                >
+    <img
+        src="./Assets/img/InstancesWhite.png"
+        class="elysium-slide"
+        alt="Elysium Launcher"
+    >
 
-            </div>
+</div>
+        <style>
+            .elysium-preview {
+                position: relative;
+                width: 100%;
+                max-width: 520px;
+                overflow: hidden;
+                border-radius: 20px;
+                margin: 0 auto;
+                aspect-ratio: 1.46;
+            }
 
-            <style>
-                .elysium-preview {
-                    position: relative;
-                    width: 100%;
-                    max-width: 520px;
-                    aspect-ratio: 1.46;
-                    overflow: hidden;
-                    border-radius: 20px;
-                    margin: 0 auto;
-                }
+            .elysium-slide {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 20px;
+                transform: translateX(100%);
+                transition: transform 0.7s ease-in-out;
+            }
 
+            .elysium-slide.active {
+                transform: translateX(0);
+                z-index: 2;
+            }
+
+            .elysium-slide.prev {
+                transform: translateX(-100%);
+                z-index: 1;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
                 .elysium-slide {
-                    position: absolute;
-                    inset: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                    border-radius: 20px;
-                    transform: translateX(100%);
-                    transition: transform 0.7s ease-in-out;
-                    z-index: 0;
+                    transition: none;
                 }
+            }
+        </style>
+        <script>
+            (() => {
+                const slides = document.querySelectorAll(".elysium-slide");
 
-                .elysium-slide.active {
-                    transform: translateX(0);
-                    z-index: 2;
-                }
+                if (slides.length < 2) return;
 
-                .elysium-slide.prev {
-                    transform: translateX(-100%);
-                    z-index: 1;
-                }
+                let currentSlide = 0;
 
-                @media (prefers-reduced-motion: reduce) {
-                    .elysium-slide {
-                        transition: none;
-                    }
-                }
-            </style>
+                setInterval(() => {
+                    const current = slides[currentSlide];
+                    const nextIndex = (currentSlide + 1) % slides.length;
+                    const next = slides[nextIndex];
 
-            <script>
-                (() => {
-                    const slides = document.querySelectorAll(".elysium-slide");
+                    next.classList.remove("prev");
+                    next.classList.add("active");
 
-                    if (slides.length < 2) return;
+                    current.classList.remove("active");
+                    current.classList.add("prev");
 
-                    let currentSlide = 0;
-
-                    setInterval(() => {
-                        const current = slides[currentSlide];
-                        const nextIndex = (currentSlide + 1) % slides.length;
-                        const next = slides[nextIndex];
-
-                        slides.forEach((slide, index) => {
-                            slide.classList.remove("active", "prev");
-
-                            if (index === nextIndex) {
-                                slide.classList.add("active");
-                            } else if (index === currentSlide) {
-                                slide.classList.add("prev");
-                            }
-                        });
-
-                        currentSlide = nextIndex;
-                    }, 4000);
-                })();
-            </script>
+                    currentSlide = nextIndex;
+                }, 4000);
+            })();
+        </script>
 
         </section>
 
-        <!-- Features -->
+<!-- Features -->
         <section
             class="bg-prism-background-light/0 dark:bg-prism-background-dark/90 md:rounded-lg backdrop-blur-md px-4 py-6 sm:px-6 prose dark:prose-invert prose-img:rounded-lg prose-video:rounded-lg max-w-none overflow-hidden"
         >
-
             <h2>Features</h2>
 
-            <!-- Home Management -->
-            <h3>Home Management</h3>
+<!-- Home Management -->
+<h3>Home Management</h3>
 
-            <p>
-                Elysium Launcher provides a simple and organized home screen where you can
-                quickly access your Minecraft instances, manage your installations, and
-                keep everything you need in one place. From the home screen, you can easily
-                navigate between your instances and access the main features of the launcher.
-            </p>
+<p>
+    Elysium Launcher provides a simple and organized home screen where you can
+    quickly access your Minecraft instances, manage your installations, and
+    keep everything you need in one place. From the home screen, you can easily
+    navigate between your instances and access the main features of the launcher.
+</p>
+
+            <div class="mx-auto not-prose grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+                <picture class="dark:hidden">
+                    <source
+                        srcset="_astro/pack-install_light.BmIXRhrQ_Z2uyvDi.avif"
+                        type="image/avif"
+                    >
+                    <source
+                        srcset="_astro/pack-install_light.BmIXRhrQ_ZMRA9G.webp"
+                        type="image/webp"
+                    >
+                    <img
+                        src="_astro/pack-install_light.BmIXRhrQ_Z24gEaX.png"
+                        alt="Elysium Launcher screenshot showing the home interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="804"
+                        height="632"
+                    >
+                </picture>
+
+                <img
+                        src="./Assets/img/HomeBlack.png"
+                        alt="Elysium Launcher screenshot showing the home interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="804"
+                        height="632"
+                     class="hidden dark:block">
+
+                <img
+                        src="./Assets/img/HomeBlack.png"
+                        alt="Elysium Launcher screenshot showing the home interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="711"
+                        height="610"
+                     class="dark:hidden">
+
+                <img
+                        src="./Assets/img/HomeBlack.png"
+                        alt="Elysium Launcher screenshot showing the home interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="711"
+                        height="610"
+                     class="hidden dark:block">
+
+            </div>
+
+<!-- Instance Management -->
+<h3>Instance Management</h3>
+
+<p>
+    Elysium Launcher keeps your Minecraft installations organized as separate
+    instances. Each instance can have its own version, mods, resource packs,
+    shaders, settings, and other configurations, allowing you to manage and
+    switch between different Minecraft setups with ease.
+</p>
 
             <div class="mx-auto not-prose grid grid-cols-1 gap-4 sm:grid-cols-2">
 
                 <img
-                    src="./Assets/img/HomeBlack.png"
-                    alt="Elysium Launcher screenshot showing the home interface"
-                    loading="lazy"
-                    decoding="async"
-                    width="804"
-                    height="632"
-                    class="dark:hidden"
-                >
+                        src="./Assets/img/InstancesBlack.png"
+                        alt="Elysium Launcher screenshot showing the instance interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="626"
+                        height="429"
+                     class="dark:hidden">
 
                 <img
-                    src="./Assets/img/HomeBlack.png"
-                    alt="Elysium Launcher screenshot showing the home interface"
-                    loading="lazy"
-                    decoding="async"
-                    width="804"
-                    height="632"
-                    class="hidden dark:block"
-                >
+                        src="./Assets/img/InstancesBlack.png"
+                        alt="Elysium Launcher screenshot showing the instance interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="626"
+                        height="429"
+                     class="hidden dark:block">
+
+                <picture class="dark:hidden">
+                    <source
+                        srcset="./Assets/img/InstancesWhite.png"
+                        type="image/avif"
+                    >
+                    <source
+                        srcset="_astro/mod-update_light.Clfo4Pji_Z2hAnet.webp"
+                        type="image/webp"
+                    >
+                    <img
+                        src="./Assets/img/InstancesWhite.png"
+                        alt="Elysium Launcher screenshot showing the instance interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="802"
+                        height="629"
+                    >
+                </picture>
+
+                <img
+                        src="./Assets/img/InstancesWhite.png"
+                        alt="Elysium Launcher screenshot showing the instance interface"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="auto"
+                        width="802"
+                        height="629"
+                     class="hidden dark:block">
 
             </div>
 
-            <!-- Instance Management -->
-            <h3>Instance Management</h3>
+<!-- Instance Configuration -->
+<h3>Instance Configuration</h3>
 
-            <p>
-                Elysium Launcher keeps your Minecraft installations organized as separate
-                instances. Each instance can have its own version, mods, resource packs,
-                shaders, settings, and other configurations, allowing you to manage and
-                switch between different Minecraft setups with ease.
-            </p>
-
-            <div class="mx-auto not-prose grid grid-cols-1 gap-4 sm:grid-cols-2">
-
-                <img
-                    src="./Assets/img/InstancesBlack.png"
-                    alt="Elysium Launcher screenshot showing the instance interface"
-                    loading="lazy"
-                    decoding="async"
-                    width="626"
-                    height="429"
-                    class="dark:hidden"
-                >
-
-                <img
-                    src="./Assets/img/InstancesWhite.png"
-                    alt="Elysium Launcher screenshot showing the instance interface"
-                    loading="lazy"
-                    decoding="async"
-                    width="802"
-                    height="629"
-                    class="hidden dark:block"
-                >
-
-            </div>
-
-            <!-- Instance Configuration -->
-            <h3>Instance Configuration</h3>
-
-            <p>
-                Elysium Launcher gives you full control over each Minecraft instance,
-                allowing you to customize its version, mods, resource packs, shaders,
-                settings, and other configurations. Each instance can be configured
-                independently, giving you the freedom to create the exact setup you want.
-            </p>
+<p>
+    Elysium Launcher gives you full control over each Minecraft instance,
+    allowing you to customize its version, mods, resource packs, shaders,
+    settings, and other configurations. Each instance can be configured
+    independently, giving you the freedom to create the exact setup you want.
+</p>
 
             <img
-                src="./Assets/img/ManageInstanceBlack.png"
-                alt="Elysium Launcher screenshot showing the instance management interface"
-                loading="lazy"
-                decoding="async"
-                width="711"
-                height="610"
-                class="mx-auto not-prose"
-            >
+                    src="./Assets/img/ManageInstanceBlack.png"
+                    alt="Elysium Launcher screenshot showing the instance management interface"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="auto"
+                    width="711"
+                    height="610"
+                    class="mx-auto not-prose"
+                >
+<!-- Instance Customization -->
+<h3>Instance Customization</h3>
 
-            <!-- Instance Customization -->
-            <h3>Instance Customization</h3>
-
-            <p>
-                Elysium Launcher gives you complete control over how each Minecraft instance
-                looks and works. Customize your instances with different settings, mods,
-                resource packs, shaders, and other options to create the setup that fits
-                exactly how you want to play.
-            </p>
+<p>
+    Elysium Launcher gives you complete control over how each Minecraft instance
+    looks and works. Customize your instances with different settings, mods,
+    resource packs, shaders, and other options to create the setup that fits
+    exactly how you want to play.
+</p>
 
             <img
-                src="./Assets/img/CustomizeInstanceBlack.png"
-                alt="Elysium Launcher screenshot showing instance customization"
-                loading="lazy"
-                decoding="async"
-                width="711"
-                height="610"
-                class="mx-auto not-prose"
-            >
+                    src="./Assets/img/CustomizeInstanceBlack.png"
+                    alt="Elysium Launcher screenshot showing instance customization"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="auto"
+                    width="711"
+                    height="610"
+                    class="mx-auto not-prose"
+                >
 
             <h2>Get Elysium Launcher</h2>
-
             <p>
                 Elysium Launcher is currently available for Windows.
-                Visit the
-                <a data-download-link href="download/windows/index.html">
-                    Download page
-                </a>
+                Visit the <a data-download-link href="download/windows/index.html">Download page</a>
                 to get the latest version.
             </p>
 
@@ -338,7 +393,6 @@
             </h2>
 
             <div class="flex flex-wrap justify-center items-center gap-4 mb-4">
-
                 <!-- Discord -->
                 <a
                     href="https://discord.gg/utrD4AFt68"
@@ -460,11 +514,13 @@
         <!-- Logo -->
         <h1 class="m-0 mb-4">
             <a href="index.html" class="inline-block w-30">
+
                 <img
-                    src="./img/64x64.png"
-                    alt="Elysium Launcher"
-                    class="w-full h-auto"
-                >
+                        src="./img/64x64.png"
+                        alt="Elysium Launcher"
+                        class="w-full h-auto"
+                    >
+
             </a>
         </h1>
 
@@ -515,6 +571,5 @@
         </p>
 
     </footer>
-
 </body>
 </html>
