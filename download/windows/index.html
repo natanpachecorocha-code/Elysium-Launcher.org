@@ -10,49 +10,12 @@
         <link rel="icon" type="image/png" href="../../img/128x128@2x.png">
         <link rel="sitemap" href="../../sitemap-index.xml">
         <link rel="stylesheet" href="../../_astro/linux.fLt4N3nt.css">
+        <link rel="stylesheet" href="../../Assets/css/site-motion.css">
 
         <script type="module" src="../../_astro/page.B1D-nYk3.js"></script>
+        <script defer src="../../Assets/js/site-motion.js"></script>
 
         <style>
-            .elysium-preview {
-                position: relative;
-                width: 100%;
-                margin: 0 auto;
-                overflow: hidden;
-                border-radius: 20px;
-            }
-
-            .elysium-slide {
-                position: absolute;
-                top: 0;
-                left: 0;
-                display: block;
-                width: 100%;
-                height: auto;
-                border-radius: 20px;
-                transform: translateX(100%);
-                transition: transform 0.7s ease-in-out;
-            }
-
-            .elysium-slide:first-child {
-                position: relative;
-            }
-
-            .elysium-slide.active {
-                z-index: 2;
-                transform: translateX(0);
-            }
-
-            .elysium-slide.next {
-                z-index: 1;
-                transform: translateX(100%);
-            }
-
-            .elysium-slide.prev {
-                z-index: 2;
-                transform: translateX(-100%);
-            }
-
             .elysium-download-button {
                 background-color: #ffffff !important;
                 color: #000000 !important;
@@ -350,7 +313,7 @@
 
                     <!-- Screenshot Slider -->
                     <div class="flex md:w-1/2">
-                        <div class="elysium-preview">
+                        <div class="elysium-preview" role="region" aria-label="Elysium Launcher screenshots" aria-roledescription="carousel" aria-live="off">
 
                             <img
                                 src="../../Assets/img/InstancesBlack.png"
@@ -511,39 +474,6 @@
             </p>
 
         </footer>
-
-        <!-- Slider Script -->
-        <script>
-            const slides = document.querySelectorAll(".elysium-slide");
-            let currentSlide = 0;
-
-            if (slides.length > 1) {
-                slides.forEach((slide, index) => {
-                    slide.classList.toggle("active", index === 0);
-                    slide.classList.toggle("next", index !== 0);
-                    slide.classList.remove("prev");
-                });
-
-                setInterval(() => {
-                    const current = slides[currentSlide];
-                    const nextIndex = (currentSlide + 1) % slides.length;
-                    const next = slides[nextIndex];
-
-                    next.classList.remove("prev");
-                    next.classList.add("next");
-
-                    requestAnimationFrame(() => {
-                        current.classList.remove("active");
-                        current.classList.add("prev");
-
-                        next.classList.remove("next");
-                        next.classList.add("active");
-                    });
-
-                    currentSlide = nextIndex;
-                }, 4000);
-            }
-        </script>
 
     </body>
 </html>
